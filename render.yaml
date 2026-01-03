@@ -1,0 +1,18 @@
+services:
+  # Dialogflow Webhook (Flask)
+  - type: web
+    name: dialogflow-webhook
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn webhook.webhook:app
+    autoDeploy: true
+
+  # Streamlit Chat UI
+  - type: web
+    name: dialogflow-chat-ui
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app/app.py --server.port=$PORT --server.address=0.0.0.0
+    autoDeploy: true
