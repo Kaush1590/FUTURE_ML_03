@@ -1,13 +1,15 @@
 # Chatbot for Customer Support
 **A customer support chatbot built using Dialogflow, Streamlit, SQLite, and Flask webhook.**
 
-This project implements a virtual customer support assistant capable of answering user queries, assisting with common issues, and responding automatically 24/7 through a conversational interface.
+This project implements a virtual customer support assistant capable of answering user queries, assisting with common issues, and responding automatically through a conversational interface.
+
 The chatbot is designed to simulate real-world customer support interactions such as handling FAQs, guiding users, and managing fallback responses when queries are unclear.
 
 **This project has been made over <a href="https://www.kaggle.com/datasets/thoughtvector/customer-support-on-twitter">Customer Support on Twitter</a> dataset.**
 
 # Problem Statement
-Modern businesses receives a large volume of customer queries that requires instant responses, such as order status, service availability and general support. Handling these requests manually can be time consuming, costly and inefficient.
+Modern businesses receive a large volume of customer queries that require instant responses, such as order status, service availability, and general support.
+Handling these requests manually can be time-consuming, costly, and inefficient.
 
 The goal of this project is to design and implement a customer support chatbot that can operate 24/7, respond to user queries in real time, and simulate the behavior of chatbots used by platforms such as Amazon, Flipkart, and Zomato.
 
@@ -18,7 +20,7 @@ The goal of this project is to design and implement a customer support chatbot t
 - Being tested and validated using the Dialogflow interface
 
 # System Requirements
-1. Operating System: Windows/ Linux/ MacOS
+1. Operating System: Windows / Linux / macOS
 2. Python version: 3.9+
 3. Internet Connection: Required for Dialogflow API access and webhook communication
 4. Browser: Any modern browser for Dialogflow console and Streamlit UI
@@ -28,17 +30,16 @@ The goal of this project is to design and implement a customer support chatbot t
 ## Standard Python Libraries:
 1. <code>datetime</code>:- For handling timestamps in chat messages
 2. <code>uuid</code>:- For generating unique session identifiers
-3. <code>time</code>:- For generating unique session identifiers
+3. <code>time</code>:- For handling delays and UI animation effects
 4. <code>collections</code>:- For grouping and managing session labels
 5. <code>sqlite3</code>:- For lightweight local database storage
 6. <code>pathlib</code>:- For handling file system paths in a platform-independent way
 
 ## Third Party Libraries
-1. <code>streamlit</code>:- For handling file system paths in a platform-independent way
+1. <code>streamlit</code>:- For building the interactive web-based chatbot UI
 2. <code>google-cloud-dialogflow</code>:- For integrating Dialogflow intent detection
 3. <code>google-auth</code>:- For secure authentication with Google Cloud services
 4. <code>flask</code>:- For creating a webhook to handle Dialogflow fulfillment
-5. <code>requests</code>:- For making HTTP requests
 
 ## Deployment Dependencies
 1. <code>gunicorn</code>:- Production-ready WSGI server for hosting the Flask webhook
@@ -50,13 +51,12 @@ The goal of this project is to design and implement a customer support chatbot t
 3. Includes a smart fallback mechanism for unrecognized inputs
 4. Displays a friendly greeting message to initiate conversations
 5. Offers quick-reply buttons for frequently asked questions
-6. Automatically creates a new chat session for each conversation
-7. Allows users to resume previous chat sessions
-8. Supports auto-naming based on the first user message and renaming sessions
-9. Stores complete chat history using SQLite
-10. Preserves messages across browser refreshes and app restarts
-11. Uses a Flask webhook to process Dialogflow fulfillment requests
-12. Easily deployable to cloud platforms like Render
+6. Automatically creates and manages chat sessions
+7. Allows users to resume, auto-name, and rename chat sessions for better organization
+8. Stores complete chat history using SQLite
+9. Preserves messages across browser refreshes and app restarts
+10. Uses a Flask webhook to process Dialogflow fulfillment requests
+11. Easily deployable to cloud platforms like Render
 
 # Installation
 **Follow the steps below to set up the Customer Support Chatbot locally.**
@@ -86,7 +86,7 @@ conda activate chatbot-env
 ```bash
 pip install -r requirements.txt
 ```
-## 4. Configure Dialogflow credentials (optional)
+## 4. Configure Dialogflow credentials
 - Create a Dialogflow ES agent in Google Cloud
 - Download the service account JSON key
 - Add it to Streamlit secrets <code>.streamlit/secrets.toml</code>
@@ -107,6 +107,14 @@ python webhook.py
 3. **Operational Cost Reduction**:- Minimizes support overhead by automating repetitive queries, allowing customer service teams to focus on complex and high-value issues.
 4. **Scalable and Deployable Solution**:- Demonstrates a scalable chatbot architecture that can be integrated into websites, mobile apps, or messaging platforms, making it suitable for startups and large enterprises alike.
 
-# Acknowlegdement
-1. Kaggle for providing dataset
+# Acknowledgement
+1. Kaggle for providing the dataset
 2. Open-source Python community
+
+# Screenshots
+
+## Chat Conversation
+![Chat UI](screenshots/chat_conversation.png)
+
+## Session Management
+![Session Management](screenshots/session_management.png)
