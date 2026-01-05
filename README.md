@@ -43,7 +43,6 @@ The goal of this project is to design and implement a customer support chatbot t
 
 ## Deployment Dependencies
 1. <code>gunicorn</code>:- Production-ready WSGI server for hosting the Flask webhook
-2. <code>python-dotenv</code>:- For managing environment variables securely
 
 # Features
 1. Provides real-time responses to user queries using Dialogflow
@@ -79,8 +78,8 @@ python -m venv <environment_name>
 ```
 ### Anaconda
 ```bash
-conda create -n chatbot-env python=3.9 -y
-conda activate chatbot-env
+conda create -n <environment_name> python=3.9 -y
+conda activate <environment_name>
 ```
 ## 3. Install required dependencies
 ```bash
@@ -100,6 +99,10 @@ streamlit run app.py
 cd webhook
 python webhook.py
 ```
+## 7. Deployment
+This project includes a `render.yaml` configuration for deployment on Render.
+
+Due to free-tier limitations (cold starts and sleep mode), the live demo is not kept running continuously. The application can be deployed instantly using the provided configuration.
 
 # Industry Impacts
 1. **24/7 Customer Support Automation**:- Reduces dependency on human agents by handling common customer queries automatically, enabling businesses to provide continuous support without increased operational costs.
